@@ -5,22 +5,36 @@
  *
  *  Designed and built by Rolen
  *
+ *
+ *
+ *
+ *
+ *
 */
-
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html, 
 body {
-    margin: 0;
+    margin: 0 !important;
     padding: 0;
-    /* width: 100%; */
     height: 100%;
-    background-color: #fafbff;
+    /* background-color: #ecf1f5; */
+    background-color: #eff3f7;
+}
+
+body:before {
+    position: fixed;
+    top: -10px;
+    left: 0;
+    z-index: 100;
+    content: '';
+    width: 100%;
+    height: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
 }
 
 a, 
@@ -38,6 +52,19 @@ h1{
 *:focus {
     outline: 0 !important;
 }
+
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+	background: white !important;
+}
+
+
+.screen-reader-text,
+.meta-nav {
+     display: none;
+}
 /* **********************header***********************/
 
 header{
@@ -45,33 +72,34 @@ header{
     width: 30%;
     height: 100%;
     background-size: cover;
-    background: #d0d7db;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #5c7186, #dfe5e9);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #5c7186, #dfe5e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #f3f5f8;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #dfe5e9, #f3f5f8);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #dfe5e9, #f3f5f8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.08);
+    border: 1px solid #ddd;
+    overflow-y: scroll;
 }
 
 .personal-intro{
     width: 80%;
-    /* height: 50%; */
+    height: 35%;
     margin: 0 auto;
-    align-items: center;
 }
 
 .pro-pic{
     
-    max-width: 120px;
-    background-image: url(images/haruki.jpeg);
+    max-width: 100px;
     border-radius: 50%;
-    height: 120px;
+    height: 100px;
     margin: 2em auto;
     background-size:cover;
-    vertical-align: middle;
+    background-image: url(images/haruki.jpeg);
 }
 
 .personal-intro p{
     text-align: center;
     font-size: 1.2rem;
-    color: rgba(0, 0, 0, 1);
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .nickname{
@@ -81,40 +109,59 @@ header{
 
 .side-categories{
     width: 50%;
-    margin: 0 auto;
-}
+    margin: 1rem auto;
 
-.side-categories-title{
-
-    font-size: 2.4rem;
-    font-size: 2.8rem;
-    margin-bottom: 36px;
 }
 
 .side-categories ul{
    list-style: none;
+   /* background-color: #d07979; */
+   padding: 0.8em;
     
 }
 
-.side-categories ul li:first-child{
-    border-top: 1px solid #ddd;
-     
-}
+ .unfolder { 
+   display: none;
+ }
+ 
+ .unfolder ~ .fold {
+   display: none;
+ }
+ 
+ .toggle-title:after{
+     content: "+";
+     float: right;
+     -webkit-transition: -webkit-transform 300ms ease;
+     transition: -webkit-transform 300ms ease;
+     transition: transform 300ms ease;
+     transition: transform .3s ease, -webkit-transform .3s ease;
+ 
+ }
+ 
+ .unfolder:checked ~ .fold {
+   display: block;
+   -webkit-transition: -webkit-transform 300ms ease;
+   transition: -webkit-transform 300ms ease;
+   transition: transform 300ms ease;
+   transition: transform 0.8s ease, -webkit-transform 0.8s ease;
+ }
+ 
+ .unfolder:checked ~ .toggle-label > .toggle-title:after{
+     transform: rotate(45deg) scale(1.08);
+ }
+ 
 
- .side-categories ul li{
-    border-bottom: 1px solid #ddd;
-     
-}
+
+
 /* content */
 
 content{
     margin-left: 30%;
     width: 70%;
     height: 100%;
-    margin-right: auto ;
+    margin-right: auto;
     float: left;
-    background: #fafbfb;
-    background: rgb(29, 25, 25);
+    margin-top: 1rem;
 }
 
 
@@ -122,30 +169,21 @@ content > article{
 
     width: 85%;
     margin: 1.5rem auto;
-    /* border-bottom: 1px solid #ddd !important; */
-    border-radius: 32px;
-    /* box-shadow: 0 2px 2px rgba(0,0,0,0.04), 0 10px 75px 0 rgba(0,0,75,0.125); */
-    transition: .3s ease-out,box-shadow .5s ease-out;
+    border-radius: 8px;
+    transition: .3s ease-out, box-shadow .5s ease-out;
     transition-delay: .1s;
-    /* -webkit-tap-highlight-color: rgba(0,0,0,0); */
-    /* box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8), */
-    /* 6px 6px 10px rgba(0, 0, 0, 0.2); */
-    background: #fafbfb;
-    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    background: #fff;;
     position: relative;
     display:flex;
-    background: rgb(49, 47, 47);
-    opacity: 80%;
-}
-
-content > article:hover{
-    box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5), inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.08);
+    border: 1px solid #eaeaea;
 }
 
 .arc-img {
     background-size:cover;
     height: auto;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 article > .col{
@@ -159,64 +197,57 @@ article > .arc-content{
     flex: 2.3;
     justify-content:flex-start;
     text-align: left;
-    margin: 1em;
-}
-
-.arc-content > div > h1 > a{
-    margin: 0.8em;
-    color: rgba(255, 253, 253, 0.7);
-
+    margin: 1.5rem;
 }
 
 .arc-content > div > p,
 time
 {
-    margin: 0.8em;
     font-size : 1.2rem;
-    color: rgba(243, 239, 239, 0.7);
+    color: rgba(0,0,0,0.7);
 }
 
 .arc-content > div > time
 {
     font-size : 1rem;
-    color: rgba(243, 239, 239, 0.7);
+    color: rgba(0,0,0,0.6);
 }
 
 .turn-btn{
-    width: 25%;
+    width: 85%;
     height: 10%;
-    margin: 0 auto;
+    margin: 1.5rem auto;
 }
 
 .turn-btn > button {
-    width: 45%;
+    width: 12%;
     height: 3rem;
-    border-radius: 10px;
-    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),6px 6px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
     font-size: 1.8rem;
-    color: #d07979;
-    color: rgba(0,0,0,0.6);
-    background-color: #fafbfb;
     padding: 0px;
     margin-top: 1rem;
-    border: 0px;
-    cursor: pointer;
+    border: 1px solid #ddd;
+    font-weight: normal;
+    margin-right: 2rem;
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.08);
 }
 
-.turn-btn > button:hover{
-    box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5), inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+.turn-btn > button a{
     color: #d07979;
+}
+
+.turn-btn > button:hover
+{
+    background: transparent;
+}
+
+.turn-btn > button:focus
+{
+    background: transparent;
 
 }
 
-.pre{
-    float: left;
-}
-
-.post{
-    float: right;
-    
-}
 /* footer  */
 
 
@@ -233,7 +264,6 @@ time
         position: unset;
     }
     
-
     content{
         width: 100%;
         margin: 0;
@@ -254,11 +284,6 @@ time
         height: 60px;
     }
 
-    content > article{
-
-        border-radius: 20px;
-    }
-
     .arc-content > div > p{
         font-size : 0.8rem;
     }
@@ -268,6 +293,7 @@ time
     }
 
     .turn-btn > button{
+        width: 20%;
         font-size: 1.2rem;
     }
 }
@@ -282,23 +308,16 @@ time
         position: unset;
     }
 
-    .turn-btn{
-        width: 50%;
-    }
-
     article > .col{
         min-height: 0%;
-        /* width: 100%; */
         flex: none;
     }
 
     .arc-img {
         width: 100%;
         height: 200px;
-        border-radius: 10px;
         flex: none;
     }
-    
     
     content > article{
         flex-direction: column; 
