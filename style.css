@@ -48,6 +48,9 @@ h1{
     font-weight: bold;
     margin: 0;
 }
+ul{
+    list-style: none;
+}
 
 *:focus {
     outline: 0 !important;
@@ -80,6 +83,9 @@ header{
     overflow-y: scroll;
 }
 
+.personl-intro-header{
+    display: none;
+}
 .personal-intro{
     width: 80%;
     height: 35%;
@@ -252,7 +258,7 @@ time
 
 
 /*------**************responsible design***************/
-@media only screen and (max-device-width : 1024px){
+@media only screen and (max-device-width : 968px){
     /* iPad landscape style here */
 
     h1{
@@ -260,30 +266,79 @@ time
     }
     header{
         width: 100%;
-        height: auto;
-        position: unset;
+        height: 48px;
+        position:fixed;
+        top:0;
+        z-index: 1000;
+       
+        
+    }
+    .personal-intro{
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+    }
+
+    .personl-intro-header{
+        width: 100%;
+        height: 36px;
+        display: block;
+        top: 6px;
+    }
+
+    .personl-intro-header li{
+        top: 6px;
+    }
+    .personl-intro-menuicon{
+        left: 0;
+        width: 36px;
+        top:0;
+        position: absolute;
+
+    }
+    .personl-intro-pic{
+        position: absolute;
+        width: 36px;
+        top: 0;
+        left: 50%;
+        margin-left: -18px;
+        text-align: center;
+    }
+    .personl-intro-searchicon{
+        position: absolute;
+        width: 36px;
+        top: 0;
+        right: 0;
+        
+    }
+
+
+    .pro-pic{
+        max-width: 36px;
+        height: 36px;
+        margin: 0;
+
+    }
+
+    .personl-intro-list{
+        display: none;
     }
     
     content{
         width: 100%;
         margin: 0;
-    }
-
-    .personal-intro{
-        padding: 1em;
+        margin-top: 48px;
     }
 
     .personal-intro p{
         font-size: 1rem;
     }
 
-    .pro-pic{
-        margin: 0.5em auto;
-        padding: 0.5em;
-        width: 60px;
-        height: 60px;
+    .sidebar{
+        display: none;
     }
-
+    
     .arc-content > div > p{
         font-size : 0.8rem;
     }
@@ -300,6 +355,7 @@ time
 
 @media only screen and (max-device-width : 639px){
 
+  
    .arc-content{
         width: 90%;
         right: 0;
