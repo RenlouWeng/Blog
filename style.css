@@ -123,9 +123,21 @@ header{
     transition: transform .3s ease, -webkit-transform .3s ease;
 }
 
-#header-menustate:checked ~ nav{
-    display: inline;
+#header-menustate:checked ~ nav .sidebar{
+    background: #d07979;
+    width: 100%;
+    margin-top: 48px;
+    background-color: #eff3f7;
+    padding: 0.5rem;
+    background-color: rgba(239, 243, 247, 0.9);
+    transition: 0.8s;
+
 }
+
+#header-menustate:checked ~ nav{
+    visibility: visible;
+}
+
 .menu-icon{
     margin-left: 15px;
     margin-top: 15px;
@@ -162,6 +174,11 @@ header{
 
 }
 
+.sidebar{
+    transition: height 2s;/*设置高度的过渡变化为2秒*/
+
+}
+
 .side-categories{
     width: 50%;
     margin: 1rem auto;
@@ -195,10 +212,6 @@ header{
  
  .unfolder:checked ~ .fold {
    display: block;
-   -webkit-transition: -webkit-transform 300ms ease;
-   transition: -webkit-transform 300ms ease;
-   transition: transform 300ms ease;
-   transition: transform 0.8s ease, -webkit-transform 0.8s ease;
  }
  
  .unfolder:checked ~ .toggle-label > .toggle-title:after{
@@ -385,8 +398,9 @@ time
         font-size: 1rem;
     }
 
-    .sidebar{
-        display: none;
+    nav{
+        /* display: none; */
+        visibility: hidden;
     }
     
     .arc-content > div > p{
