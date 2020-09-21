@@ -22,9 +22,8 @@ body {
     margin: 0 !important;
     padding: 0;
     height: 100%;
-    /* background-color: #ecf1f5; */
-    /* background-color: #eff3f7; */
-    background-image: url('https://lorempixel.com/400/200/');
+    background-image: url(images/fregrans.jpeg);
+    background-size: cover;
 }
 
 body:before {
@@ -233,7 +232,9 @@ content{
     float: left;
     padding-top: 1rem;
     display: inline;
-    backdrop-filter: blur(10px);  
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    /* backdrop-filter: brightness(0.2); */
     background-color: rgba(255, 255, 255, 0.8);
 }
 
@@ -244,8 +245,9 @@ content > article{
     border-radius: 8px;
     position: relative;
     display:flex;
-    backdrop-filter: blur(5px);  
-    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .arc-img {
