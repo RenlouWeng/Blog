@@ -23,7 +23,8 @@ body {
     padding: 0;
     height: 100%;
     /* background-color: #ecf1f5; */
-    background-color: #eff3f7;
+    /* background-color: #eff3f7; */
+    background-image: url('https://lorempixel.com/400/200/');
 }
 
 body:before {
@@ -78,8 +79,8 @@ input[type="submit"]:focus {
     background: #f3f5f8;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #dfe5e9, #f3f5f8);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #dfe5e9, #f3f5f8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,.08);
-    border: 1px solid #ddd;
+    /* box-shadow: 0 1px 2px 0 rgba(0,0,0,.08); */
+    /* border: 1px solid #ddd; */
     overflow-y: scroll;
 }
 
@@ -227,11 +228,13 @@ input[type="submit"]:focus {
 content{
     margin-left: 30%;
     width: 70%;
-    height: 100%;
+    min-height: 100%;
     margin-right: auto;
     float: left;
-    margin-top: 1rem;
-    display: none;
+    padding-top: 1rem;
+    display: inline;
+    backdrop-filter: blur(10px);  
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 content > article{
@@ -239,14 +242,10 @@ content > article{
     width: 85%;
     margin: 1.5rem auto;
     border-radius: 8px;
-    transition: .3s ease-out, box-shadow .5s ease-out;
-    transition-delay: .1s;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    background: #fff;;
     position: relative;
     display:flex;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,.08);
-    border: 1px solid #eaeaea;
+    backdrop-filter: blur(5px);  
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .arc-img {
@@ -321,6 +320,7 @@ time
 /* single  */
 .single-page{
     display: inline;
+    display: none;
 }
 
 .single-page > div{
@@ -361,6 +361,8 @@ time
         top:0;
         z-index: 1000;
         overflow: unset;
+        border: none;
+        box-shadow: none;
        
         
     }
@@ -404,7 +406,6 @@ time
         
     }
 
-
     .pro-pic{
         max-width: 36px;
         height: 36px;
@@ -418,6 +419,7 @@ time
     
     content{
         width: 100%;
+        height: auto;
         margin: 0;
         margin-top: 48px;
     }
