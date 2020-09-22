@@ -83,7 +83,7 @@ input[type="submit"]:focus {
     overflow-y: scroll;
 }
 
-.personl-intro-header{
+.personal-intro-header{
     display: none;
 }
 .personal-intro{
@@ -106,21 +106,29 @@ input[type="submit"]:focus {
     display: none;
 }
 
-#header-menustate:checked ~ .personal-intro .menu-icon:before{
+#header-menustate:checked ~ .personal-intro .personal-intro-header .personal-intro-item .menu-label .personal-intro-menuicon-bread-top{
     transform: rotate(45deg);
-    top:15px;
     -webkit-transition: -webkit-transform 300ms ease;
     transition: -webkit-transform 300ms ease;
     transition: transform 300ms ease;
     transition: transform .3s ease, -webkit-transform .3s ease;
 }
-#header-menustate:checked ~ .personal-intro .menu-icon:after{
+
+#header-menustate:checked ~ .personal-intro .personal-intro-header .personal-intro-item .menu-label .personal-intro-menuicon-bread-bottom{
     transform: rotate(-45deg);
-    bottom: -2px;
-    -webkit-transition: -webkit-transform 300ms ease;
-    transition: -webkit-transform 300ms ease;
-    transition: transform 300ms ease;
-    transition: transform .3s ease, -webkit-transform .3s ease;
+    -webkit-transform: rotate(-45deg);
+}
+
+#header-menustate:checked ~ .personal-intro .personal-intro-header .personal-intro-item .menu-label .personal-intro-menuicon-bread-top .personal-intro-menuicon-bread-crust-top{
+    transform: none;
+    transition: transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1008s, -webkit-transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1008s;
+    -webkit-transition: -webkit-transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1008s;
+}
+
+#header-menustate:checked ~ .personal-intro .personal-intro-header .personal-intro-item .menu-label .personal-intro-menuicon-bread-bottom .personal-intro-menuicon-bread-crust-bottom{
+    transform: none;
+    transition: transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1008s, -webkit-transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1008s;
+    -webkit-transition: -webkit-transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1008s;
 }
 
 #header-menustate:checked ~ nav .sidebar{
@@ -188,7 +196,6 @@ input[type="submit"]:focus {
 
 .side-categories ul{
    list-style: none;
-   /* background-color: #d07979; */
    padding: 0.8em;
     
 }
@@ -232,9 +239,8 @@ content{
     float: left;
     padding-top: 1rem;
     display: inline;
-    backdrop-filter: blur(10px); 
-    -webkit-backdrop-filter: blur(10px); 
-    /* backdrop-filter: brightness(0.2); */
+    backdrop-filter: saturate(180%) blur(60px); 
+    -webkit-backdrop-filter: saturate(180%) blur(60px); 
     background-color: rgba(255, 255, 255, 0.8);
 }
 
@@ -245,9 +251,7 @@ content > article{
     border-radius: 8px;
     position: relative;
     display:flex;
-    backdrop-filter: blur(10px); 
-    -webkit-backdrop-filter: blur(10px); 
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .arc-img {
@@ -375,32 +379,88 @@ time
         position: absolute;
     }
 
-    .personl-intro-header{
+    .personal-intro-header{
         width: 100%;
         height: 36px;
         display: block;
         top: 6px;
     }
-
-    .personl-intro-header li{
-        top: 6px;
+    .personal-intro-item{
+        height: 48px;
     }
-    .personl-intro-menuicon{
+    .personal-intro-menuicon{
         left: 0;
-        width: 36px;
+        width: 48px;
         top:0;
         position: absolute;
 
     }
-    .personl-intro-pic{
+    .personal-intro-menuicon-bread{
+        position: absolute;
+        top: 9px;
+        left: 9px;
+        width: 30px;
+        height: 30px;
+        /* background-color: brown; */
+        z-index: 3;
+    }
+    
+    .personal-intro-menuicon-bread-top{
+        transition: transform .1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) .1008s, -webkit-transform .1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) .1008s;
+        -webkit-transition: -webkit-transform .1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) .1008s;
+        z-index: 4;
+    }
+    .personal-intro-menuicon-bread-bottom{
+        transition: transform .1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) .1008s, -webkit-transform .1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) .1008s;
+        -webkit-transition: -webkit-transform .1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) .1008s;
+
+    }
+    .personal-intro-menuicon-bread-crust{
+        display: block;
+        width: 17px;
+        height: 1px;
+        background: #eff3f7;
+        border-radius: 0.5px;
+        position: absolute;
+        left: 7px;
+        z-index: 1;
+    }
+    .personal-intro-menuicon-bread-crust-top{
+        top: 14px;
+        transform: translateY(-3px);
+        -webkit-transform: translateY(-3px);
+        transition: transform .1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) .1008s, -webkit-transform .1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) .1008s;
+        -webkit-transition: -webkit-transform .1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) .1008s;
+        
+    }
+    .personal-intro-menuicon-bread-crust-bottom{
+        bottom: 14px;
+        transform: translateY(3px);
+        -webkit-transform: translateY(3px);
+        transition: transform .1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) .1008s, -webkit-transform .1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) .1008s;
+        -webkit-transition: -webkit-transform .1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) .1008s;
+        
+    }
+    .menu-label{
+        display: block;
+        background: #d07979;
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        -webkit-transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        
+    }
+    .personal-intro-pic{
         position: absolute;
         width: 36px;
-        top: 0;
+        top: 6px;
         left: 50%;
         margin-left: -18px;
         text-align: center;
     }
-    .personl-intro-searchicon{
+    .personal-intro-searchicon{
         position: absolute;
         width: 36px;
         top: 0;
@@ -415,7 +475,7 @@ time
 
     }
 
-    .personl-intro-list{
+    .personal-intro-list{
         display: none;
     }
     
