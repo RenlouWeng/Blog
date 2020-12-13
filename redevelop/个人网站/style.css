@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+/**
+ * @desc Blog v1.0
+ * @author Rolen
+ * @date 2020-12-08
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, 
+body {
+    margin: 0 !important;
+    padding: 0;
+    height: 100%;
+    background-color: #cdd3d7;
+    background-size: cover;
+}
+
+body:before {
+    position: fixed;
+    top: -10px;
+    left: 0;
+    z-index: 100;
+    content: '';
+    width: 100%;
+    height: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+
+a, 
+u {
+    text-decoration: none;
+    color: rgba(0,0,0,0.8);
+}
+
+h1 {
+    font-size: 1.35rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+.screen-reader-text,
+.meta-nav {
+    display: none;
+}
+
+/* ==========================================================================
+   左边菜单栏(aside-menu)
+   ========================================================================== */
+
+.aside-menu {
+    position: fixed;
+    width: 30%;
+    height: 100%;
+    background: #f3f5f8;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #dfe5e9, #f3f5f8);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #dfe5e9, #f3f5f8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    overflow-y: scroll;
+}
+
+/* 左边菜单栏-个人信息栏(aside-menu_personal-info)
+   ========================================================================== */
+.aside-menu_personal-info {
+    width: 80%;
+    height: 35%;
+    margin: 0 auto;
+}
+
+/* 个人头像(aside-menu_personal-info_avatar) */
+.aside-menu_personal-info_avatar {
+    width: 100px;
+    height: 100px;
+    margin: 2em auto;
+    border-radius: 50%;
+    background-size:cover;
+    background-image: url(img/haruki.jpeg);
+}
+
+/* 博客标题(aside-menu_personal-info_title) */
+.aside-menu_personal-info_title,
+.aside-menu_personal-info_intro {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: rgba(0,0,0,0.8);
+}
+
+/* 博客简介(aside-menu_personal-info_intro) */
+.aside-menu_personal-info_intro {
+    font-size: 1em;
+}
+
+/* ==========================================================================
+   右边文章显示列表(article-list)
+   ========================================================================== */
+
+.article-list {
+    margin-left: 30%;
+    width: 70%;
+    height: 100%;
+    float: left;
+    padding-top: 1rem;  
+}
+
+/* 文章显示块(article-list_article)
+   ========================================================================== */
+
+.article-list_article {
+    width: 85%;
+    margin: 1.5rem auto;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* 文章缩略图(article-list_article_thumbnail) */
+.article-list_article_thumbnail {
+    flex: 1;
+    background-image: url(img/leaf.jpeg);
+    background-size: cover;
+    border-radius: 8px;
+}
+
+/* 文章内容部分(article-list_article_content) */
+.article-list_article_content {
+    flex: 2.3;
+    justify-content: flex-start;
+    text-align: left;
+    margin: 1.5rem;
+}
+
+/* 翻页按钮(article-list_pagination)
+   ========================================================================== */
+
+.article-list_pagination {
+    width: 85%;
+    height: 10%;
+    margin: 1.5rem auto;
+}
+
+.article-list_pagination_previous,
+.article-list_pagination_next {
+    width: 12%;
+    height: 3rem;
+    border-radius: 5px;
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    margin-right: 2rem;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #d07979;
+}
+
+/* ==========================================================================
+   响应式布局
+   ========================================================================== */
